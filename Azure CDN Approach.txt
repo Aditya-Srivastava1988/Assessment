@@ -1,0 +1,23 @@
+We can implement this functionality using Azure CDN 
+
+Azure CDN can help in delivering contents to User/Clients by caching content at physical Nodes.
+For this implementation Prerequisites are
+1) Azure Subscription, Azure Storage Account
+2) CDN Profile, CDN Endpoint
+3) Azure CDN Profile Level, it will cost as per profile level  
+
+How it will be implemented 
+1) Need to create Resource on azure Portal using Front Door and CDN Profile
+2) In CDN Profile, needto select Subscription and resource group
+3) Once Profile created, open resource and create EndPoints
+4) Host Website in Azure, in CDN profile select App Service-> out Website
+5) Web App-> Networking->Azure CDN
+6) We can put CSS, Images folder in our Web App
+7) Content Path for Files should be same as CDN Endpoint
+ like http://<appname>.azurewebsites.net/Img/Image1.jpeg
+      http://<endpointname>.azureedge.net/ImgImage1.jpeg
+8)In browser open URL
+http://<endpointname>.azureedge.net/index.html
+9) we can see same page that we ran in an Azure web app. 
+Azure CDN has retrieved the origin web app's assets and is serving them from the CDN endpoint.
+10) Need to Purge the CDN in Azure Portal
